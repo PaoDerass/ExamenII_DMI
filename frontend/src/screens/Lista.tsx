@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, Button, Alert } from 'react-native';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/productos';
+const API_URL = 'http://192.168.1.195:5000/productos';
 
 type Producto = {
   id: number;
@@ -55,7 +55,7 @@ export default function ListaProductos({ navigation }: any) {
             )}
             <View style={styles.info}>
               <Text style={styles.nombre}>{item.nombre}</Text>
-              <Text>Precio: ${item.precio}</Text>
+              <Text>Precio: L.{item.precio}</Text>
               <Text>Estado: {item.estado}</Text>
               <TouchableOpacity style={styles.botonEliminar} onPress={() => eliminarProducto(item.id)}>
                 <Text style={styles.textoBoton}>Eliminar</Text>

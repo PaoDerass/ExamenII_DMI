@@ -19,6 +19,19 @@ sequelize.authenticate()
     console.error('error en la conexion:', err);
   });
 
+  const Producto = sequelize.define('Producto', {
+  nombre: DataTypes.STRING,
+  descripcion: DataTypes.TEXT,
+  precio: DataTypes.FLOAT,
+  estado: DataTypes.STRING,
+  categoria: DataTypes.STRING,
+  url_fotografia: DataTypes.STRING
+}, {
+  tableName: 'productos',
+  timestamps: true
+});
+
+
 app.get('/productos', async (req, res) => {
   try {
     const productos = await Producto.findAll();
@@ -57,7 +70,7 @@ app.delete('/productos/:id', async (req, res) => {
 });
 
 
-const PORT = 3306;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+const PORT = 5000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
 });

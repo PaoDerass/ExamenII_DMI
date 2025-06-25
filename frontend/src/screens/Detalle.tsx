@@ -10,7 +10,7 @@ export default function DetalleProducto({ route }: any) {
         <Image source={{ uri: producto.url_fotografia }} style={styles.imagen} />
       )}
       <Text style={styles.nombre}>{producto.nombre}</Text>
-      <Text>Precio: ${producto.precio}</Text>
+      <Text>Precio: L. {producto.precio}</Text>
       <Text>Estado: {producto.estado}</Text>
       <Text>Categoría: {producto.categoria}</Text>
       <Text style={styles.descripcion}>{producto.descripcion}</Text>
